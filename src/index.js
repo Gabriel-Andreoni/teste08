@@ -2,11 +2,24 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
+import Contato from './routes/Contato';
+import Produtos from './routes/Produtos';
+import {
+  BrowserRouter,
+  Routes,
+  Route
+} from 'react-router-dom';
 import reportWebVitals from './reportWebVitals';
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<App />} />
+        <Route path="/Contato" element={<Contato />} />
+        <Route path="/Produtos" element={<Produtos />} />
+      </Routes>
+    </BrowserRouter>
   </React.StrictMode>,
   document.getElementById('root')
 );
